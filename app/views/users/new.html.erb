@@ -1,0 +1,10 @@
+<h1>ユーザー新規登録</h1>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :uid, "ユーザーID" %>
+  <%= form.text_field :uid %>
+  <%= form.label :pass, "パスワード" %>
+  <%= form.password_field :pass %>
+  <br><br>
+  <%= form.submit "登録" %>
+<% end %>
