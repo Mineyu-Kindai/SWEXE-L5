@@ -1,0 +1,8 @@
+<h1>新規ツイート投稿</h1>
+
+<%= form_with model: @tweet do |form| %>
+  <%= form.label :message, "今何してる？" %>
+  <%= form.text_field :message %>
+  <br><br>
+  <%= form.submit "投稿" %>
+<% end %>
