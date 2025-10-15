@@ -8,12 +8,14 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(uid: params[:user][:uid], 
-      pass: params[:user][:pass], age: params[:user][:age])
-    if @user.save
-      redirect_to users_path
-    else
-      render new_users_path
+    @user = User.new(uid: params[:user][:uid])
+    @user.pass = BCrypt::Password.create(params[:user][:pass])
+    if User.find_by(uid: params[:user][:uid]) != nil
+      flash[:notice] = "※ほかのユーザーとUIDが重複しています"
+      redirect_to new_user_path
+    else 
+      @user.save
+      redirect_to top_main_path
     end
   end
   

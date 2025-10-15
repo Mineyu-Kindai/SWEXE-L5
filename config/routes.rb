@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :tweets
   resources :likes
   
-  root "top#main"
+  root "tweets#index"
   
 end

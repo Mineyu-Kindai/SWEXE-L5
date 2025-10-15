@@ -8,8 +8,8 @@ class TweetsController < ApplicationController
   end
   
   def create
-    @tweet = Tweet.new(message: params[:tweet][:message], 
-    user_id: 1) #FIXIT: complete correct user_id
+    @tweet = Tweet.new(message: params[:tweet][:message])
+    @tweet.user = User.find_by(uid: session[:login_uid])
     @tweet.save
     redirect_to tweets_path
   end
