@@ -1,0 +1,11 @@
+<h1>プロフィール編集</h1>
+
+<%= form_with model: @profile do |f| %>
+
+  <%= f.label :message, "メッセージ" %><br>
+  <%= f.text_area :message %><br>
+  <%= f.submit "更新する" %>
+<% end %>
+<br>
+<%= link_to 'プロフィールを見る', profile_path(@profile) %><br>
+<%= link_to 'トップページに戻る', tweets_path %>

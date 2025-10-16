@@ -1,0 +1,8 @@
+<h1>全ユーザープロフィール一覧</h1>
+
+<% @profiles.each do |e| %>
+  UID：<%= e.user.uid %><br>
+  メッセージ：<%= e.message %><br>
+<% end %>
+<br><br>
+<%= link_to "ホームに戻る", tweets_path %>

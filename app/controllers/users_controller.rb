@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     if User.find_by(uid: params[:user][:uid]) != nil
       flash[:notice] = "※ほかのユーザーとUIDが重複しています"
       redirect_to new_user_path
-    else 
+    else
+      np = Profile.new(message: "")
+      @user.profile = np
       @user.save
       redirect_to top_main_path
     end

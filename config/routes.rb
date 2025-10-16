@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get "top/main"
   post "top/login"
   get "top/logout"
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tweets
   resources :likes
+  resources :profiles
   
   
   root "tweets#index"
