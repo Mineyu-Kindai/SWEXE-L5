@@ -1,5 +1,7 @@
 <h1>「<%= @profile.user.uid %>」のプロフィール</h1>
 
 メッセージ：<%= @profile.message %><br><br>
-<%= link_to "編集", edit_profile_path(@profile) %>
+<% if session[:login_uid] == @profile.user.uid %>
+  <%= link_to "編集", edit_profile_path(@profile) %>
+<% end %>
 <%= link_to "戻る", :back %>
