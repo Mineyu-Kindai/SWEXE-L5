@@ -1,8 +1,8 @@
 <h1>ツイート一覧</h1>
 
-ログイン中UID：<%= session[:login_uid]%><br>
+ログイン中UID：<%= session[:login_uid] %><br>
 
-<% u = User.find_by(uid: session[:login_uid]) %>
+<% u = User.find_by(uid: session[:login_uid] ) %>
 <% if session[:login_uid] %>
   <%= link_to "マイプロフィールを表示", profile_path(u.profile) %><br>
 <% end %>

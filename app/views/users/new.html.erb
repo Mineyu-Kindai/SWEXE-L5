@@ -4,10 +4,18 @@
 <% end %>
 
 <%= form_with model: @user do |form| %>
-  <%= form.label :uid, "ユーザーID" %>
-  <%= form.text_field :uid %>
-  <%= form.label :pass, "パスワード" %>
-  <%= form.password_field :pass %>
+  <p>
+    <%= form.label :uid, "ユーザーID" %>
+    <%= form.text_field :uid %>
+  </p>
+  <p>
+    <%= form.label :password, "パスワード" %>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.label :password_confirmation, 'パスワード(確認)' %>
+    <%= form.text_field :password_confirmation %>
+  </p>
   <%= form.submit "登録" %>
 <% end %>
 <br>
